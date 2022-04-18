@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './promo-button.module.css';
 import closeIcon from '../../images/close.svg';
 
-export const PromoButton = ({children, setPromo, setDiscount, extraClass }) => {
+import { DiscountContext } from '../../services/appContext'; 
+import { PromoContext } from '../../services/productsContext';
+
+export const PromoButton = ({children, extraClass }) => {
+  const { setPromo } = useContext(PromoContext)
+  const { setDiscount } = useContext(DiscountContext)
+
   const cancelPromo = () => {
     setPromo('')
     setDiscount(null)
