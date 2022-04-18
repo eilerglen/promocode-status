@@ -22,7 +22,7 @@ function App() {
 
 
   const [totalPrice, setTotalPrice] = React.useState(0);
-  const [discountState, discountDispatcher] = useReducer(reducer, discountInitialState)
+  const [discountState, discountDispatcher] = useReducer(reducer, discountInitialState, undefined)
 
   return (
     <div className={styles.app}>
